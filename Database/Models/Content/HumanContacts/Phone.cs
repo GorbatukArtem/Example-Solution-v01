@@ -2,6 +2,6 @@
 {
     public class Phone
     {
-        
+        public int Id { get; set; }
     }
 }

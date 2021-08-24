@@ -2,6 +2,6 @@
 {
     public class Email
     {
-        
+        public int Id { get; set; }
     }
 }

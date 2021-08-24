@@ -2,6 +2,6 @@
 {
     public class HistoryChange
     {
-        
+        public int Id { get; set; }
     }
 }

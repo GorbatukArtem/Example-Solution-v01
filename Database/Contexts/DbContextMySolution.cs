@@ -1,4 +1,18 @@
-﻿using Database.Configurations.Content.OrgStructures;
+﻿using Database.Configurations.Content.HumanContacts;
+using Database.Configurations.Content.HumanEducations;
+using Database.Configurations.Content.HumanMotivations;
+using Database.Configurations.Content.HumanResources;
+using Database.Configurations.Content.LabourPerformance;
+using Database.Configurations.Content.LabourSafety;
+using Database.Configurations.Content.NewsFeeder;
+using Database.Configurations.Content.OrgPositions;
+using Database.Configurations.Content.OrgProcesses;
+using Database.Configurations.Content.OrgStructures;
+using Database.Configurations.Content.Services;
+using Database.Configurations.Content.Software;
+using Database.Configurations.Logs;
+using Database.Configurations.Security.Access;
+using Database.Configurations.Security.Authorization;
 using Database.Models.Content.HumanContacts;
 using Database.Models.Content.HumanEducations;
 using Database.Models.Content.HumanMotivations;
@@ -35,14 +49,12 @@ namespace Database.Contexts
         public virtual DbSet<Attestation> Attestations { get; set; }
         public virtual DbSet<Skill> Skills { get; set; }
         public virtual DbSet<Training> Trainings { get; set; }
-
         #endregion
 
         #region Content HumanMotivations
         public virtual DbSet<Bonus> Bonuses { get; set; }
         public virtual DbSet<Insurance> Insurances { get; set; }
         public virtual DbSet<Reward> Rewards { get; set; }
-
         #endregion
 
         #region Content HumanResources
@@ -131,55 +143,92 @@ namespace Database.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region Content HumanContacts
-
+            modelBuilder.ApplyConfiguration(new ConfigurationEmail());
+            modelBuilder.ApplyConfiguration(new ConfigurationLocation());
+            modelBuilder.ApplyConfiguration(new ConfigurationPhone());
             #endregion
 
             #region Content HumanEducations
-
+            modelBuilder.ApplyConfiguration(new ConfigurationAttestation());
+            modelBuilder.ApplyConfiguration(new ConfigurationSkill());
+            modelBuilder.ApplyConfiguration(new ConfigurationTraining());
             #endregion
 
             #region Content HumanMotivations
-
+            modelBuilder.ApplyConfiguration(new ConfigurationBonus());
+            modelBuilder.ApplyConfiguration(new ConfigurationInsurance());
+            modelBuilder.ApplyConfiguration(new ConfigurationReward());
             #endregion
 
             #region Content HumanResources
-
+            modelBuilder.ApplyConfiguration(new ConfigurationEmployee());
+            modelBuilder.ApplyConfiguration(new ConfigurationVacation());
+            modelBuilder.ApplyConfiguration(new ConfigurationVacationType());
             #endregion
 
             #region Content LabourPerformance
-
+            modelBuilder.ApplyConfiguration(new ConfigurationTask());
             #endregion
 
             #region Content LabourSafety
+            modelBuilder.ApplyConfiguration(new ConfigurationIncident());
+            modelBuilder.ApplyConfiguration(new ConfigurationIncidentType());
+            modelBuilder.ApplyConfiguration(new ConfigurationPermit());
+            modelBuilder.ApplyConfiguration(new ConfigurationPermitItem());
+            modelBuilder.ApplyConfiguration(new ConfigurationPermitType());
+            #endregion
 
+            #region Content NewsFeeder
+            modelBuilder.ApplyConfiguration(new ConfigurationAnnouncement());
             #endregion
 
             #region Content OrgPositions
-
+            modelBuilder.ApplyConfiguration(new ConfigurationAccess());
+            modelBuilder.ApplyConfiguration(new ConfigurationAssignment());
+            modelBuilder.ApplyConfiguration(new ConfigurationBackup());
+            modelBuilder.ApplyConfiguration(new ConfigurationDocument());
+            modelBuilder.ApplyConfiguration(new ConfigurationProcess());
             #endregion
 
             #region Content OrgProcesses
-
+            modelBuilder.ApplyConfiguration(new ConfigurationProcessComplexity());
+            modelBuilder.ApplyConfiguration(new ConfigurationProcessCriticality());
+            modelBuilder.ApplyConfiguration(new ConfigurationProcessFrequency());
             #endregion
 
             #region Content OrgStructure
             modelBuilder.ApplyConfiguration(new ConfigurationCompany());
+            modelBuilder.ApplyConfiguration(new ConfigurationDepartment());
+            modelBuilder.ApplyConfiguration(new ConfigurationPosition());
+            modelBuilder.ApplyConfiguration(new ConfigurationTeam());
+            #endregion
+
+            #region Content Services
+            modelBuilder.ApplyConfiguration(new ConfigurationStock());
+            modelBuilder.ApplyConfiguration(new ConfigurationStockProposal());
+            modelBuilder.ApplyConfiguration(new ConfigurationStockRequest());
             #endregion
 
             #region Content Software
-
+            modelBuilder.ApplyConfiguration(new ConfigurationApplication());
             #endregion
 
             #region Logs
-
+            modelBuilder.ApplyConfiguration(new ConfigurationHistoryChange());
+            modelBuilder.ApplyConfiguration(new ConfigurationHistoryError());
+            modelBuilder.ApplyConfiguration(new ConfigurationHistoryLogin());
             #endregion
 
             #region Security Access
-
+            modelBuilder.ApplyConfiguration(new ConfigurationRequest());
+            modelBuilder.ApplyConfiguration(new ConfigurationRequestedRole());
+            modelBuilder.ApplyConfiguration(new ConfigurationRequestStatus());
+            modelBuilder.ApplyConfiguration(new ConfigurationRequestType());
             #endregion
 
             #region Security Authorization
-
+            modelBuilder.ApplyConfiguration(new ConfigurationRole());
+            modelBuilder.ApplyConfiguration(new ConfigurationUser());
             #endregion
 
             #region Seeds
