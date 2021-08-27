@@ -4,7 +4,6 @@ using Database.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Database.Migrations
 {
@@ -18,6 +17,55 @@ namespace Database.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Database.Models.Content.HumanResources.Employee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<byte?>("BirthDay")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte?>("BirthMonth")
+                        .HasColumnType("tinyint");
+
+                    b.Property<DateTime?>("DateEnd")
+                        .HasColumnType("date");
+
+                    b.Property<DateTime>("DateStart")
+                        .HasColumnType("date");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<double>("FullTimeEmployee")
+                        .HasColumnType("float");
+
+                    b.Property<string>("IdentityId")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<byte[]>("Photo")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdentityId")
+                        .IsUnique();
+
+                    b.ToTable("Employees", "dbo.Content.HumanResources");
+                });
 
             modelBuilder.Entity("Database.Models.Content.OrgPositions.Assignment", b =>
                 {
@@ -43,6 +91,8 @@ namespace Database.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
 
                     b.HasIndex("PositionId");
 
@@ -72,7 +122,7 @@ namespace Database.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Companies", "dbo.Content.OrgStructure");
+                    b.ToTable("Companies", "dbo.Content.OrgStructures");
                 });
 
             modelBuilder.Entity("Database.Models.Content.OrgStructures.Department", b =>
@@ -155,11 +205,19 @@ namespace Database.Migrations
 
             modelBuilder.Entity("Database.Models.Content.OrgPositions.Assignment", b =>
                 {
+                    b.HasOne("Database.Models.Content.HumanResources.Employee", "Employee")
+                        .WithMany("Assignments")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Database.Models.Content.OrgStructures.Position", "Position")
                         .WithMany("Assignments")
                         .HasForeignKey("PositionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Employee");
 
                     b.Navigation("Position");
                 });
@@ -198,6 +256,11 @@ namespace Database.Migrations
                     b.Navigation("Department");
 
                     b.Navigation("Manager");
+                });
+
+            modelBuilder.Entity("Database.Models.Content.HumanResources.Employee", b =>
+                {
+                    b.Navigation("Assignments");
                 });
 
             modelBuilder.Entity("Database.Models.Content.OrgStructures.Company", b =>

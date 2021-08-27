@@ -8,7 +8,7 @@ namespace Database.Configurations.Content.OrgStructures
     {
         public void Configure(EntityTypeBuilder<Company> builder)
         {
-            builder.ToTable("Companies", "dbo.Content.OrgStructure");
+            builder.ToTable("Companies", "dbo.Content.OrgStructures");
 
             builder.HasKey(p => p.Id);
 

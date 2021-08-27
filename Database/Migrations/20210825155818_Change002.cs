@@ -29,7 +29,7 @@ namespace Database.Migrations
                     table.ForeignKey(
                         name: "FK_Departments_Companies_CompanyId",
                         column: x => x.CompanyId,
-                        principalSchema: "dbo.Content.OrgStructure",
+                        principalSchema: "dbo.Content.OrgStructures",
                         principalTable: "Companies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);

@@ -44,7 +44,7 @@ namespace Database.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Companies", "dbo.Content.OrgStructure");
+                    b.ToTable("Companies", "dbo.Content.OrgStructures");
                 });
 #pragma warning restore 612, 618
         }

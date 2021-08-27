@@ -8,11 +8,11 @@ namespace Database.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "dbo.Content.OrgStructure");
+                name: "dbo.Content.OrgStructures");
 
             migrationBuilder.CreateTable(
                 name: "Companies",
-                schema: "dbo.Content.OrgStructure",
+                schema: "dbo.Content.OrgStructures",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -28,7 +28,7 @@ namespace Database.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_Companies_Name",
-                schema: "dbo.Content.OrgStructure",
+                schema: "dbo.Content.OrgStructures",
                 table: "Companies",
                 column: "Name",
                 unique: true);
@@ -38,7 +38,7 @@ namespace Database.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Companies",
-                schema: "dbo.Content.OrgStructure");
+                schema: "dbo.Content.OrgStructures");
         }
     }
 }

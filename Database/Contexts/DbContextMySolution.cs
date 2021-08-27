@@ -58,7 +58,7 @@ namespace Database.Contexts
         //#endregion
 
         //#region Content HumanResources
-        //public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
         //public virtual DbSet<Vacation> Vacations { get; set; }
         //public virtual DbSet<VacationType> VacationTypes { get; set; }
         //#endregion
@@ -93,7 +93,7 @@ namespace Database.Contexts
         //public virtual DbSet<ProcessFrequency> ProcessFrequencies { get; set; }
         //#endregion
 
-        //#region Content OrgStructure
+        //#region Content OrgStructures
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
@@ -160,7 +160,7 @@ namespace Database.Contexts
             //#endregion
 
             //#region Content HumanResources
-            //modelBuilder.ApplyConfiguration(new ConfigurationEmployee());
+            modelBuilder.ApplyConfiguration(new ConfigurationEmployee());
             //modelBuilder.ApplyConfiguration(new ConfigurationVacation());
             //modelBuilder.ApplyConfiguration(new ConfigurationVacationType());
             //#endregion
@@ -195,7 +195,7 @@ namespace Database.Contexts
             //modelBuilder.ApplyConfiguration(new ConfigurationProcessFrequency());
             //#endregion
 
-            //#region Content OrgStructure
+            //#region Content OrgStructures
             modelBuilder.ApplyConfiguration(new ConfigurationCompany());
             modelBuilder.ApplyConfiguration(new ConfigurationDepartment());
             modelBuilder.ApplyConfiguration(new ConfigurationPosition());

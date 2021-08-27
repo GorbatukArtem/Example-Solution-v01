@@ -26,6 +26,18 @@ namespace Database.Configurations.Content.OrgPositions
             builder.Property(p => p.DateEnd)
                 .HasColumnType("date")
                 .IsRequired(false);
+
+            builder.HasOne(p => p.Position)
+                .WithMany(p => p.Assignments)
+                .HasForeignKey(p => p.PositionId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(p => p.Employee)
+                .WithMany(p => p.Assignments)
+                .HasForeignKey(p => p.EmployeeId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
