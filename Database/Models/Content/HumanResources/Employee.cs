@@ -24,15 +24,15 @@ namespace Database.Models.Content.HumanResources
         public DateTime DateStart { get; set; }
         public DateTime? DateEnd { get; set; }
 
-        public virtual ICollection<Assignment> Assignments { get; set; }
-        public virtual ICollection<Backup> Backups { get; set; }
-        public virtual ICollection<Vacation> Vacations { get; set; }
+        //public virtual ICollection<Assignment> Assignments { get; set; }
+        //public virtual ICollection<Backup> Backups { get; set; }
+        //public virtual ICollection<Vacation> Vacations { get; set; }
 
         public Employee()
         {
-            Assignments = new HashSet<Assignment>();
-            Backups = new HashSet<Backup>();
-            Vacations = new HashSet<Vacation>();
+            //Assignments = new HashSet<Assignment>();
+            //Backups = new HashSet<Backup>();
+            //Vacations = new HashSet<Vacation>();
         }
     }
 }

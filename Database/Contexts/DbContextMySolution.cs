@@ -81,7 +81,7 @@ namespace Database.Contexts
         
         //#region Content OrgPositions
         //public virtual DbSet<Access> Accesses { get; set; }
-        //public virtual DbSet<Assignment> Assignments { get; set; }
+        public virtual DbSet<Assignment> Assignments { get; set; }
         //public virtual DbSet<Backup> Backups { get; set; }
         //public virtual DbSet<Document> Documents { get; set; }
         //public virtual DbSet<Process> Processes { get; set; }
@@ -183,7 +183,7 @@ namespace Database.Contexts
 
             //#region Content OrgPositions
             //modelBuilder.ApplyConfiguration(new ConfigurationAccess());
-            //modelBuilder.ApplyConfiguration(new ConfigurationAssignment());
+            modelBuilder.ApplyConfiguration(new ConfigurationAssignment());
             //modelBuilder.ApplyConfiguration(new ConfigurationBackup());
             //modelBuilder.ApplyConfiguration(new ConfigurationDocument());
             //modelBuilder.ApplyConfiguration(new ConfigurationProcess());

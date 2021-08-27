@@ -22,7 +22,7 @@ namespace Database.Models.Content.OrgStructures
         public virtual Position Manager { get; set; }
         public virtual ICollection<Position> Subordinates { get; set; }
         //public virtual ICollection<Process> Processes { get; set; }
-        //public virtual ICollection<Assignment> Assignments { get; set; }
+        public virtual ICollection<Assignment> Assignments { get; set; }
         //public virtual ICollection<Backup> Backups { get; set; }
         //public virtual ICollection<Document> Documents { get; set; }
         //public virtual ICollection<Access> Accesses { get; set; }
@@ -33,7 +33,7 @@ namespace Database.Models.Content.OrgStructures
         {
             Subordinates = new HashSet<Position>();
             //Processes = new HashSet<Process>();
-            //Assignments = new HashSet<Assignment>();
+            Assignments = new HashSet<Assignment>();
             //Backups = new HashSet<Backup>();
             //Documents = new HashSet<Document>();
             //Accesses = new HashSet<Access>();

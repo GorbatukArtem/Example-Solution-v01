@@ -8,7 +8,6 @@ namespace Database.Models.Content.OrgPositions
     {
         public int Id { get; set; }
 
-        public int DepartmentId { get; set; }
         public int PositionId { get; set; }
         public int EmployeeId { get; set; }
 
@@ -17,8 +16,7 @@ namespace Database.Models.Content.OrgPositions
         public DateTime DateStart { get; set; }
         public DateTime? DateEnd { get; set; }
 
-        public virtual Department Department { get; set; }
         public virtual Position Position { get; set; }
-        public virtual Employee Employee { get; set; }
+        //public virtual Employee Employee { get; set; }
     }
 }

@@ -14,6 +14,18 @@ namespace Database.Configurations.Content.OrgPositions
 
             builder.Property(p => p.Id)
                 .ValueGeneratedOnAdd();
+
+            builder.Property(p => p.FullTimeEmployee)
+                .HasPrecision(1, 1)
+                .IsRequired();
+            
+            builder.Property(p => p.DateStart)
+                .HasColumnType("date")
+                .IsRequired();
+
+            builder.Property(p => p.DateEnd)
+                .HasColumnType("date")
+                .IsRequired(false);
         }
     }
 }
