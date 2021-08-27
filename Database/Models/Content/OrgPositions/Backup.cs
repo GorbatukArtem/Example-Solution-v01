@@ -1,0 +1,19 @@
+﻿using System;
+using Database.Models.Content.HumanResources;
+using Database.Models.Content.OrgStructures;
+
+namespace Database.Models.Content.OrgPositions
+{
+    public class Backup
+    {
+        public int Id { get; set; }
+        public int PositionId { get; set; }
+        public int EmployeeId { get; set; }
+
+        public DateTime DateStart { get; set; }
+        public DateTime? DateEnd { get; set; }
+
+        public virtual Position Position { get; set; }
+        public virtual Employee Employee { get; set; }
+    }
+}
