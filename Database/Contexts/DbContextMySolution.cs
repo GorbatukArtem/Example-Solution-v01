@@ -1,34 +1,9 @@
-﻿using Database.Configurations.Content.HumanContacts;
-using Database.Configurations.Content.HumanEducations;
-using Database.Configurations.Content.HumanMotivations;
-using Database.Configurations.Content.HumanResources;
-using Database.Configurations.Content.LabourPerformance;
-using Database.Configurations.Content.LabourSafety;
-using Database.Configurations.Content.NewsFeeder;
+﻿using Database.Configurations.Content.HumanResources;
 using Database.Configurations.Content.OrgPositions;
-using Database.Configurations.Content.OrgProcesses;
 using Database.Configurations.Content.OrgStructures;
-using Database.Configurations.Content.Services;
-using Database.Configurations.Content.Software;
-using Database.Configurations.Logs;
-using Database.Configurations.Security.Access;
-using Database.Configurations.Security.Authorization;
-using Database.Models.Content.HumanContacts;
-using Database.Models.Content.HumanEducations;
-using Database.Models.Content.HumanMotivations;
 using Database.Models.Content.HumanResources;
-using Database.Models.Content.LabourPerformance;
-using Database.Models.Content.LabourSafety;
-using Database.Models.Content.NewsFeeder;
 using Database.Models.Content.OrgPositions;
-using Database.Models.Content.OrgProcesses;
 using Database.Models.Content.OrgStructures;
-using Database.Models.Content.Services;
-using Database.Models.Content.Software;
-using Database.Models.Logs;
-using Database.Models.Security.Access;
-using Database.Models.Security.Authorization;
-using Database.Seeds;
 using Microsoft.EntityFrameworkCore;
 
 namespace Database.Contexts
@@ -112,6 +87,7 @@ namespace Database.Contexts
         //#region Logs
         //public virtual DbSet<HistoryChange> HistoryChanges { get; set; }
         //public virtual DbSet<HistoryError> HistoryErrors { get; set; }
+        //public virtual DbSet<HistoryLogin> HistoryLogins { get; set; }
         //#endregion
 
         //#region Security Access

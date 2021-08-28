@@ -4,4 +4,12 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Administration\Content\LabourPerformance\" />
+    <Folder Include="Administration\Content\NewsFeeder\" />
+    <Folder Include="Administration\Content\Software\" />
+    <Folder Include="Administration\Security\Authentication\" />
+    <Folder Include="Content\" />
+  </ItemGroup>
+
 </Project>

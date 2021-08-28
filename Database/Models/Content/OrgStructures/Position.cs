@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Database.Models.Content.HumanEducations;
 using Database.Models.Content.OrgPositions;
-using Database.Models.Content.Software;
 
 namespace Database.Models.Content.OrgStructures
 {
