@@ -1,0 +1,75 @@
+﻿/*цвет под картинкой. удаление картинки, показывает этот цвет*/
+.sidebar {
+    /*z-index: 4;*/
+    position: fixed;
+    float: left;
+    height: 100%;
+    /*min-height: 100vh;*/
+    min-width: 260px; /*60px*/
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    /*background-color: red;*/
+    opacity: .8;
+    overflow-x: hidden; /*скрывает длинный текст*/
+    transition: all 0.7s;
+    box-shadow: 0px 16px 38px -12px #000000, 0px 4px 25px 0px #000000, 0px 8px 10px -5px #000000;
+}
+
+    .sidebar .sidebar-header {
+        /*z-index: 3;*/
+        position: relative;
+        padding: 0 10px;
+        /*color: white !important;*/
+        font-size: 1.5em;
+        overflow: hidden; /*скрывает длинный текст*/
+        display: block;
+        cursor: pointer;
+    }
+
+    .sidebar .sidebar-body {
+        /*z-index: 3;*/
+        position: relative;
+    }
+
+    .sidebar .sidebar-background {
+    }
+
+    /*.sidebar .list-group .list-group-item {
+        display: block;
+        color: white !important;
+        background: none;
+        overflow: hidden; 
+        white-space: nowrap;
+        margin-bottom: 5px;
+        padding: 10px !important;
+        text-decoration: none;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
+    }*/
+
+    /*.sidebar .list-group .list-group-item {
+        padding-left: 20px !important;
+        font-size: 30%;
+    }*/
+
+    .sidebar .list-group .list-group-item:hover,
+    .sidebar .list-group .list-group-item:focus {
+        /*color: white !important;
+    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);*/
+        background-color: #D0E7FF;
+    }
+
+/*sidebar list-group list-group-item.active > a,
+sidebar ul li.active > a [aria-expanded="true"] {
+    color: black !important;
+    background-color: white;
+    border-radius: 3px;
+    opacity: 1;
+    box-shadow: 0 2px 10px 0 #000000, 0 3px 5px -5px #3c4858;
+}*/

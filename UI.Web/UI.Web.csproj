@@ -18,6 +18,7 @@
     <Folder Include="Areas\Security\Data\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\" />
+    <Folder Include="wwwroot\css\effects\" />
   </ItemGroup>
 
 </Project>
