@@ -1,0 +1,62 @@
+﻿@font-face {
+    /*font-family: 'Book Antiqua' !important;*/
+    /*src: url("~/fonts/Book Antiqua.ttf") format('truetype');*/
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    /*    position: relative;
+    min-height: 100%;*/
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    position: relative;
+    display: block;
+    float: right;
+    padding-right: 20px;
+    width: calc(100% - 280px);
+    height: calc(100vh - 20px);
+}
+
+main nav {
+     user-select: none
+}
+
+main > content {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body {
+    /*font-family: 'Book Antiqua' !important;*/
+    /*margin-top: 80px;*/
+    /*margin-bottom: 120px;*/
+    background-color: #f3f3f3;
+    /*background-image: url('../../image/background.jpg');
+    background-size: cover;*/
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.breadcrumb > li + li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: "/\00a0";
+}
